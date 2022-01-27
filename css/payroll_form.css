@@ -198,3 +198,8 @@ select {
         flex-direction: column-reverse;
     }
 }
+
+.errorText {
+    color: red;
+    font-size: 16px;
+}

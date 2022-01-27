@@ -27,38 +27,44 @@
     </header>
 
     <div class="form-content">
-        <form action="#" class="form" onsubmit="save(); return false">
+        <form action="#" class="form" onsubmit="return save();" id="empForm">
             <div class="form-header">Employee Payroll form </div>
             <div class="row-content">
                 <label for="name" class="label name">Name</label>
                 <input type="text" class="input" id="name" name="name" placeholder="Enter your name..." required>
             </div>
-
+            <span class="error">
+                <label for="name" class="label name"></label>
+                <span id="nameError" class="errorText"></span>
+            </span>
             <div class="row-content">
                 <label for="profile" class="label text">Profile Image</label>
                 <div class="profile-radio-content">
                     <label>
-                        <input type="radio" id="profile1" name="profile" value="../assets/profile-images/Ellipse -3.png" required/>
+                        <input type="radio" id="profile1" name="profile" value="../assets/profile-images/Ellipse -3.png"/>
                         <img class="profile" src="../assets/profile-images/Ellipse -3.png" alt="">
                     </label>
 
                     <label>
-                        <input type="radio" id="profile2" name="profile" value="../assets/profile-images/Ellipse -1.png" required/>
+                        <input type="radio" id="profile2" name="profile" value="../assets/profile-images/Ellipse -1.png"/>
                         <img class="profile" src="../assets/profile-images/Ellipse -1.png" alt="">
                     </label>
 
                     <label>
-                        <input type="radio" id="profile3" name="profile" value="../assets/profile-images/Ellipse -8.png" required/>
+                        <input type="radio" id="profile3" name="profile" value="../assets/profile-images/Ellipse -8.png" />
                         <img class="profile" src="../assets/profile-images/Ellipse -8.png" alt="">
                     </label>
 
                     <label>
-                        <input type="radio" id="profile4" name="profile" value="../assets/profile-images/Ellipse -7.png" required/>
+                        <input type="radio" id="profile4" name="profile" value="../assets/profile-images/Ellipse -7.png" />
                         <img class="profile" src="../assets/profile-images/Ellipse -7.png" alt="">
                     </label>
                 </div>
             </div>
-
+            <span class="error">
+                <label for="name" class="label name"></label>
+                <span id="profileError" class="errorText"></span>
+            </span>
             <div class="row-content">
                 <label for="gender" class="label text">Gender</label>
                 <div>
@@ -88,8 +94,8 @@
             <div class="row-content">
                 <label for="salary" class="label text">Salary</label>
                 <div>
-                    <input type="range" class="input" name="salary" id="salary" min="300000" max="500000" step="100" value="400000" oninput="salaryVal.value=salary.value">
-                    <output name="salaryVal" for="salary" class="salary-output text" onload="this.value=salary.value"></output>
+                    <input type="range" class="input" name="salary" id="salary" min="300000" max="500000" step="100" value="400000">
+                    <output name="salaryVal" for="salary" class="salary-output text" id="rangeValue">400000</output>
                 </div>
             </div>
 
@@ -97,36 +103,36 @@
                 <label for="startDate" class="label text">Start Date</label>
                 <select name="Day" id="day">
                     <option value="1">1</option>
-                    <option value="1">2</option>
-                    <option value="1">3</option>
-                    <option value="1">4</option>
-                    <option value="1">5</option>
-                    <option value="1">6</option>
-                    <option value="1">7</option>
-                    <option value="1">8</option>
-                    <option value="1">9</option>
-                    <option value="1">10</option>
-                    <option value="1">11</option>
-                    <option value="1">12</option>
-                    <option value="1">13</option>
-                    <option value="1">14</option>
-                    <option value="1">15</option>
-                    <option value="1">16</option>
-                    <option value="1">17</option>
-                    <option value="1">18</option>
-                    <option value="1">19</option>
-                    <option value="1">20</option>
-                    <option value="1">21</option>
-                    <option value="1">22</option>
-                    <option value="1">23</option>
-                    <option value="1">24</option>
-                    <option value="1">25</option>
-                    <option value="1">26</option>
-                    <option value="1">27</option>
-                    <option value="1">28</option>
-                    <option value="1">29</option>
-                    <option value="1">30</option>
-                    <option value="1">31</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    <option value="24">24</option>
+                    <option value="25">25</option>
+                    <option value="26">26</option>
+                    <option value="27">27</option>
+                    <option value="28">28</option>
+                    <option value="29">29</option>
+                    <option value="30">30</option>
+                    <option value="31">31</option>
                 </select>
                 <select name="Month" id="month">
                     <option value="1">1</option>
