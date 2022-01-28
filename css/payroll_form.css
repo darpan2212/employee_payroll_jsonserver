@@ -199,7 +199,10 @@ select {
     }
 }
 
-.errorText {
+error-output {
     color: red;
-    font-size: 16px;
+    font-size: 12px;
+    font-style: italic;
+    margin-left: 10px;
+    min-width: 140px;
 }

@@ -11,6 +11,8 @@
     <title>Employee payroll form</title>
 
     <script defer src="../js/EmployeePayrollForm.js"></script>
+    <script defer src="../js/EmployeePayroll.js"></script>
+    <script defer src="../js/payroll_form.js"></script>
 </head>
 
 <body>
@@ -29,14 +31,17 @@
     <div class="form-content">
         <form action="#" class="form" onsubmit="return save();" id="empForm">
             <div class="form-header">Employee Payroll form </div>
+
             <div class="row-content">
                 <label for="name" class="label name">Name</label>
                 <input type="text" class="input" id="name" name="name" placeholder="Enter your name..." required>
             </div>
-            <span class="error">
-                <label for="name" class="label name"></label>
-                <span id="nameError" class="errorText"></span>
-            </span>
+            <div class="row-content">
+                <error-output></error-output>
+                <error-output class="text-error" for="text"></error-output>
+            </div>
+
+
             <div class="row-content">
                 <label for="profile" class="label text">Profile Image</label>
                 <div class="profile-radio-content">
@@ -61,10 +66,10 @@
                     </label>
                 </div>
             </div>
-            <span class="error">
-                <label for="name" class="label name"></label>
-                <span id="profileError" class="errorText"></span>
-            </span>
+            <div class="row-content">
+                <error-output></error-output>
+                <error-output class="profile-error" for="profile"></error-output>
+            </div>
             <div class="row-content">
                 <label for="gender" class="label text">Gender</label>
                 <div>
@@ -95,7 +100,7 @@
                 <label for="salary" class="label text">Salary</label>
                 <div>
                     <input type="range" class="input" name="salary" id="salary" min="300000" max="500000" step="100" value="400000">
-                    <output name="salaryVal" for="salary" class="salary-output text" id="rangeValue">400000</output>
+                    <output name="salaryVal" for="salary" class="salary-output text" id="rangeValue"></output>
                 </div>
             </div>
 
