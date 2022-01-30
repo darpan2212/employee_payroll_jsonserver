@@ -4,7 +4,6 @@ function save() {
 
     var name = document.getElementById("empForm").elements.namedItem("name").value;
     var gender = document.getElementById("empForm").elements.namedItem("gender").value;
-    var hrSelected = document.getElementById("empForm").elements.namedItem("hr").checked;
     var salary = document.getElementById("empForm").elements.namedItem("salary").value;
     var day = document.getElementById("empForm").elements.namedItem("Day").value;
     var month = document.getElementById("empForm").elements.namedItem("Month").value;
@@ -41,35 +40,32 @@ function save() {
 
     var startDate = day + "/" + month + "/" + year;
 
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    const empDate = !startDate ? "undefined" : new Date(startDate).toLocaleDateString('en-US', options);
+
     emp.name = name;
     emp.gender = gender;
-    emp.hrSelected = hrSelected;
+    emp.department = allDept.join(',');
     emp.salary = salary;
-    emp.startDate = startDate;
+    emp.startDate = empDate;
 
-    addEmpData(emp);
-
-    /*const emp = {
-        name: name,
-        profile: profile,
-        gender: gender,
-        hrSelected: hrSelected,
-        salary: salary,
-        startDate: startDate
+    if (flag) {
+        addEmpData(emp);
     }
-    alert(emp.name + "\n" + emp.profile + "\n" + emp.gender + "\n" + emp.hrSelected + "\n" + emp.salary + "\n" + emp.startDate);*/
+
     return flag;
 }
 
 function addEmpData(emp) {
     let empList = JSON.parse(localStorage.getItem('EmpList'));
-
     if (empList == undefined) {
+        localStorage.setItem('lastId', 1);
         empList = [emp];
     } else {
+        emp.id = parseInt(localStorage.getItem('lastId')) + 1;
+        localStorage.setItem('lastId', emp.id);
         empList.push(emp);
     }
-    alert(empList.toString());
 
     localStorage.setItem('EmpList', JSON.stringify(empList));
 }
